@@ -27,4 +27,48 @@ for ($i = 0; $i < count($array2D); $i++) {
     }
     echo "<br>";
 }
+
+$osoby = [
+    ["imie" => "Jan", "wiek" => 30],
+    ["imie" => "Anna", "wiek" => 25],
+    ["imie" => "Piotr", "wiek" => 40]
+];
+
+foreach($osoby as $wiersz){
+    foreach($wiersz as $element){
+        echo $element . " ";
+    
+    }
+    echo "<br>";
+}
+
+for($i = 0; $i < count($osoby); $i++){
+    echo $osoby[$i]["imie"] . " " . $osoby[$i]["wiek"] . "<br>";
+}
+$array4x4 = [
+    [1,2,3,4],
+    [5,6,7,8],
+    [9,10,11,12],
+    [13,14,15,16],
+];
+
+for ($i = 0; $i < count($array4x4); $i++) {
+    for ($j = 0; $j < count($array4x4[$i]); $j++) {
+        if ($i === $j) {
+            $array4x4[$i][$j] = 0;
+        }
+    }
+}
+
+function printArray($array4x4) {
+    for ($i = 0; $i < count($array4x4); $i++) {
+        for ($j = 0; $j < count($array4x4[$i]); $j++) {
+            echo $array4x4[$i][$j] . " ";
+        }
+        echo "<br>";
+    }
+}
+
+printArray($array4x4);
+
 ?>
