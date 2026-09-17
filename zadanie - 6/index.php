@@ -20,4 +20,11 @@ $array2D = [
     [7, 8, 9]
 ];
 var_dump($array2D);
+
+for ($i = 0; $i < count($array2D); $i++) {
+    for ($j = 0; $j < count($array2D[$i]); $j++) {
+        echo $array2D[$i][$j] . " ";
+    }
+    echo "<br>";
+}
 ?>
