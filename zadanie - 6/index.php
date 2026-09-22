@@ -81,11 +81,9 @@ echo "Suma wszystkich elementów tablicy: " . $sum;
 
 
 
-$firstColumnSum = 0;
-$firstColumnValues = [];
+$firstColumnSum = 0 ;
 for ($i = 0; $i < count($array4x4); $i++) {
     $firstColumnSum += $array4x4[$i][0];
-    $firstColumnValues[] = $array4x4[$i][0];
 }
 echo "Suma wszystkich elementów w pierwszej kolumnie: " . $firstColumnSum . "<br>";
 ?>
