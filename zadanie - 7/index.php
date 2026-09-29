@@ -1,17 +1,18 @@
 <?php
-$array = [1, 2, 3, 4, 5];
-$array2 = [6, 7, 8, 9, 10];
-printArray($array);
-printArray($array2);
-echo sumNumbers(6,7,6,7,6,7,6,7,6,7,6,7);
-echo "<br>";
-echo multiplyNumbers(9,10);
-echo "<br>";
-echo czyPierwsza(7);
-echo "<br>";
-echo czyPierwsza(10);
-echo "<br>";
-echo wypiszLiczbyPierwszeZZakresu(1,100);
+// $array = [1, 2, 3, 4, 5];
+// $array2 = [6, 7, 8, 9, 10];
+// printArray($array);
+// printArray($array2);
+// echo sumNumbers(6,7,6,7,6,7,6,7,6,7,6,7);
+// echo "<br>";
+// echo multiplyNumbers(9,10);
+// echo "<br>";
+// echo czyPierwsza(7);
+// echo "<br>";
+// echo czyPierwsza(10);
+// echo "<br>";
+// echo wypiszLiczbyPierwszeZZakresu(1,100);
+// echo "<br>";
 
 // wypisanie tablicy w funkcji
 
@@ -69,5 +70,59 @@ function wypiszLiczbyPierwszeZZakresu($poczatek , $koniec){
 }
 
 
-// zadanie stworz funkcje obliczStatystyki(array $liczby): array ktora zwraca tablice asocjacyjna z kluczami min,max,srednia,suma.Kazda z tych opcji to osobna funkcja.
+// zadanie stworz funkcje obliczStatystyki(array $liczby): array ktora zwraca tablice asocjacyjna z kluczami min,max,srednia,suma.Kazda z tych opcji to osobna funkcja.wypisac wszystko.
+
+$liczby = [20,10,15,35,100,250,125];
+
+function obliczStatystyki(array $liczby): array{
+    return [
+        "min" => obliczMin($liczby),
+        "max" => obliczMax($liczby),
+        "srednia" => obliczSrednia($liczby),
+        "suma" => obliczSume($liczby)
+    ];
+}
+
+function obliczMin($liczby){
+    $min = 0;
+    for($i = 1;$i < count($liczby);$i++){
+        if($liczby[$i] < $min){
+            $min = $liczby[$i];
+        }
+    }
+    return $min;
+}
+
+function obliczMax($liczby){
+    $max = 0;
+    for($i = 1;$i < count($liczby);$i++){
+        if($liczby[$i] > $max){
+            $max = $liczby[$i];
+        }
+    }
+    return $max;
+}
+
+function obliczSrednia($liczby){
+    $suma = 0;
+    for($i = 0;$i < count($liczby);$i++){
+        $suma += $liczby[$i];
+    }
+    return $suma / count($liczby);
+}
+
+function obliczSume($liczby){
+    $suma = 0;
+    for($i = 0;$i < count($liczby);$i++){
+        $suma += $liczby[$i];
+    }
+    return $suma;
+}
+
+$wyniki = obliczStatystyki($liczby);
+
+echo "Min: " . $wyniki["min"] . "<br>";
+echo "Maks: " . $wyniki["max"] . "<br>";
+echo "Srednia: " . $wyniki["srednia"] . "<br>";
+echo "Suma: " . $wyniki["suma"] . "<br>";
 ?>
