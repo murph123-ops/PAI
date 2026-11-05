@@ -45,13 +45,14 @@ echo "Polaczenie sie powiodlo"
         $price = $_POST['price'];
         $amount = $_POST['amount'];
 
-        $sql = "INSERT INTO Products (name,price,amount) VALUES (".$name.",".$amount.",".$price.")";
+        $sql = "INSERT INTO `products`(`name`, `amount`, `price`) VALUES ('Artem','3','3')";
+        // wykonuje zapytanie na bazie danych na podstawie podanego SQLa oraz polaczenia z BD
         if(mysqli_query($conn,$sql)){
-            echo "Udalo sie dodac rekord"
+            echo "Udalo sie dodac rekord";
         }else{
-            echo "Bluescreen Panie" . mysqli_error($conn)
+            echo "Bluescreen Panie" . mysqli_error($conn);
         }
-
+        mysqli_close($conn);
     }
 ?>    
 </body>

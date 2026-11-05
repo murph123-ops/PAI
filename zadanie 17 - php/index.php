@@ -47,7 +47,7 @@ echo "Polaczenie sie powiodlo"
 
         $sql = "INSERT INTO Products (name,price,amount) VALUES (?,?,?)";
         $stmt = $conn -> prepare($sql); // przygotowuje na polaczeniu zapytanie sql
-        $stmt -> bind_param("sid"$name, $price ,$amount);
+        $stmt -> bind_param("sid" $name, $price ,$amount);
         $stmt -> execute();
         $stmt -> close();
         $conn -> close();
